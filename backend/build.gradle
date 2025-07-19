@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'io.github.FriendshipLee'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 웹, JPA, 검증 - 필수
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // DB 드라이버
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // WebClient (Binance API 연동 등 비동기 HTTP 요청용)
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    // 자동 재시작 (개발용)
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Lombok (코드 간결)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // 테스트
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
