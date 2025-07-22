@@ -1,4 +1,7 @@
 spring:
+  config:
+    import: classpath:application-secret.yml
+
   application:
     name: coin-auto-trading
 
@@ -7,9 +10,9 @@ spring:
 
   #DB 접속 정보
   datasource:
-    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: ${DB_USER}
-    password: ${DB_PASS}
+    url: jdbc:mysql://${db.host}:${db.port}/${db.name}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: ${db.user}
+    password: ${db.pass}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -33,6 +36,10 @@ spring:
     restart:
       enabled: true
 
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.trading.dto
+
 server:
   port: 8081
 
@@ -42,3 +49,11 @@ logging:
     root: info
     org.hibernate.SQL: debug
     org.springframework.web: info
+
+# Swagger 설정
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    doc-expansion: none
