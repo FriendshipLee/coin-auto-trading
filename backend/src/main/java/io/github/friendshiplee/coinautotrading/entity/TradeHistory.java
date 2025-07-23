@@ -31,23 +31,23 @@ public class TradeHistory {
     private Integer tradeType;
 
     @Column(name = "entry_price")
-    private float entryPrice;
+    private Float entryPrice;
 
     @Column(name = "exit_price")
-    private float exitPrice;
+    private Float exitPrice;
 
     @Column
-    private float quantity;
+    private Float quantity;
 
     @Column
-    private float profit;
+    private Float profit;
 
     @CreationTimestamp
     @Column(name = "entry_date", nullable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Timestamp entryDate;
 
     @UpdateTimestamp
-    @Column(name = "exit_date")
+    @Column(name = "exit_date", columnDefinition = "TIMESTAMP")
     private Timestamp exitDate;
 
 }

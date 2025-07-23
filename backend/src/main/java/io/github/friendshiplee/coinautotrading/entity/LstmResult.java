@@ -23,7 +23,7 @@ public class LstmResult {
     private Timestamp lstmDate;
 
     @Column(name = "lstm_price", nullable = false)
-    private float lstmPrice;
+    private Float lstmPrice;
 
     @CreationTimestamp
     @Column(name = "create_date", nullable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
