@@ -15,11 +15,13 @@
 ---
 
 ## 시스템 구성도
+```
 TradingView → Spring Boot (Webhook 수신 + DB 저장)
 ↓
 FastAPI (Binance 주문 실행)
 ↓
 React (거래 내역, 전략 성능 시각화)
+```
 
 ---
 
