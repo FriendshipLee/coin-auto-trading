@@ -24,6 +24,7 @@ React (거래 내역, 전략 성능 시각화)
 ---
 
 ## 디렉토리 구조
+'''
 coin-auto-trading/
 ├── backend/
 │ ├── java-service/ # Spring Boot 서버 (Webhook, DB 연결)
@@ -31,6 +32,7 @@ coin-auto-trading/
 ├── frontend/
 │ └── react/ # 사용자 UI: 전략 설정, 거래 내역 조회
 └── README.md
+'''
 
 ---
 
