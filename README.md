@@ -16,9 +16,9 @@
 
 ## 시스템 구성도
 ```
-TradingView (전략에 따른 Webhook 송신) → Spring Boot (Webhook 수신, 로직 처리)
-↓                                         ↓ JPA, MyBatis (DB 저장)
-FastAPI (Binance 주문 실행)             Cloud(MySQL)
+TradingView (전략 - Webhook 알림) → Spring Boot (Webhook 수신, 로직 처리)
+↓                                        ↓ JPA, MyBatis (DB 저장)
+FastAPI (Binance 주문 실행)             MySQL (Cloud 서버)
 ↓
 React (거래 내역, 전략 성능 시각화)
 ```
